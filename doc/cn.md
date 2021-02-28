@@ -146,7 +146,7 @@ Stack(
   ClipPath(
     clipper: ProsteBezierCurve(
       position: ClipPosition.top,
-      reclip: fales,
+      reclip: false,
       list: [
         ...
       ],
@@ -168,7 +168,7 @@ Stack(
   ClipPath(
     clipper: ProsteBezierCurve(
       position: ClipPosition.top,
-      reclip: fales,
+      reclip: false,
       list: [
         BezierCurveSection(
           proportion: 1 / 3,
