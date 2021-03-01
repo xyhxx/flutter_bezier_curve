@@ -78,7 +78,7 @@ Stack(
 
 # 使用方法
 
-## 二阶贝塞尔函数
+## 二阶贝塞尔曲线
 
 <div style="display: flex; align-items: flex-start; justify-content: space-between;">
   <img style="width: 200px;" src="https://raw.githubusercontent.com/xyhxx/program_preview/master/proste_bezier_curve/top.png" />
@@ -134,7 +134,7 @@ Stack(
 
 ### class
 
-+ ProsteBezierCurve 用于绘制并返回裁剪路径
++ `ProsteBezierCurve` 用于绘制并返回裁剪路径
 
 |   参数   | 类型   | 默认值   | 介绍 |
 | :------: | :---: | :---: | ---- |
@@ -154,7 +154,7 @@ Stack(
     child: ...,
   ),
 ```
-+ BezierCurveSection 用于绘制曲线的片段
++ `BezierCurveSection` 用于绘制曲线的片段
 
 | 参数 | 类型 | 默认值 | 介绍 |
 | :------: | :---: | :---: | ---- |
@@ -183,7 +183,7 @@ Stack(
 
 ```
 
-+ BezierCurveDots 贝塞尔曲线控制点坐标
++ `BezierCurveDots` 贝塞尔曲线控制点坐标
 
 | 参数 | 类型 | 默认值 | 介绍 |
 | :------: | :---: | :---: | ---- |
@@ -193,7 +193,7 @@ Stack(
 | y2 | double | | 第二个点的y坐标 |
 
 ### ProsteBezierCurve 的静态方法
-+ BezierCurveDots calcCurveDots(BezierCurveSection param) 获得计算后的控制点坐标，通常用于通过计算方法得到数据后自己绘制路径，例如多条边绘制曲线或者将曲线与其他绘制规则结合
++ `BezierCurveDots calcCurveDots(BezierCurveSection param)` 获得计算后的控制点坐标，通常用于通过计算方法得到数据后自己绘制路径，例如多条边绘制曲线或者将曲线与其他绘制规则结合
 
 ``` dart
 
@@ -278,7 +278,7 @@ class CustomSelfClipper2 extends CustomClipper<Path> {
 
 ```
 
-##  三阶贝塞尔函数
+##  三阶贝塞尔曲线
 
 <div style="display: flex; align-items: flex-start; justify-content: space-between;">
   <img style="width: 200px;" src="https://raw.githubusercontent.com/xyhxx/program_preview/master/proste_bezier_curve/third3.png" />
@@ -313,7 +313,7 @@ class CustomSelfClipper2 extends CustomClipper<Path> {
 
 ### class
 
-+ ProsteThirdOrderBezierCurve 用于绘制并返回三阶贝塞尔曲线的裁剪路径
++ `ProsteThirdOrderBezierCurve` 用于绘制并返回三阶贝塞尔曲线的裁剪路径
 
 |   参数   | 类型   | 默认值   | 介绍 |
 | :------: | :---: | :---: | ---- |
@@ -332,7 +332,7 @@ ClipPath(
   child: ...,
 )
 ```
-+ ThirdOrderBezierCurveSection 用于绘制三阶贝塞尔曲线的片段
++ `ThirdOrderBezierCurveSection` 用于绘制三阶贝塞尔曲线的片段
 
 |   参数   | 类型   | 默认值   | 介绍 |
 | :------: | :---: | :---: | ---- |
@@ -408,7 +408,7 @@ ClipPath(
 | y3 | double | | 第三个点的y坐标 |
 
 ### ProsteThirdOrderBezierCurve 的静态方法
-+ ThirdOrderBezierCurveDots calcCurveDots(ThirdOrderBezierCurveSection param) 获得计算后的控制点坐标，通常用于通过计算方法得到数据后自己绘制路径，例如多条边绘制曲线或者将曲线与其他绘制规则结合
++ `ThirdOrderBezierCurveDots calcCurveDots(ThirdOrderBezierCurveSection param)` 获得计算后的控制点坐标，通常用于通过计算方法得到数据后自己绘制路径，例如多条边绘制曲线或者将曲线与其他绘制规则结合
 
 ``` dart
 
