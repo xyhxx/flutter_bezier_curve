@@ -465,28 +465,32 @@ class AppHome extends StatelessWidget {
             ),
           ),
           ClipPath(
-            clipper: ProsteThirdOrderBezierCurve(position: ClipPosition.right, list: [
-              ThirdOrderBezierCurveSection(
-                p1: Offset(screenWidth - 100, 150),
-                p2: Offset(screenWidth, 150),
-                p4: Offset(screenWidth, 0),
-                p3: Offset(screenWidth - 100, 0),
-              ),
-            ]),
+            clipper: ProsteThirdOrderBezierCurve(
+                position: ClipPosition.right,
+                list: [
+                  ThirdOrderBezierCurveSection(
+                    p1: Offset(screenWidth - 100, 150),
+                    p2: Offset(screenWidth, 150),
+                    p4: Offset(screenWidth, 0),
+                    p3: Offset(screenWidth - 100, 0),
+                  ),
+                ]),
             child: Container(
               height: 150,
               color: Colors.cyanAccent,
             ),
           ),
           ClipPath(
-            clipper: ProsteThirdOrderBezierCurve(position: ClipPosition.right, list: [
-              ThirdOrderBezierCurveSection(
-                p2: Offset(screenWidth - 100, 150),
-                p1: Offset(screenWidth, 150),
-                p3: Offset(screenWidth, 0),
-                p4: Offset(screenWidth - 100, 0),
-              ),
-            ]),
+            clipper: ProsteThirdOrderBezierCurve(
+                position: ClipPosition.right,
+                list: [
+                  ThirdOrderBezierCurveSection(
+                    p2: Offset(screenWidth - 100, 150),
+                    p1: Offset(screenWidth, 150),
+                    p3: Offset(screenWidth, 0),
+                    p4: Offset(screenWidth - 100, 0),
+                  ),
+                ]),
             child: Container(
               height: 150,
               color: Colors.deepOrange,

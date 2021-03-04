@@ -41,8 +41,14 @@ class ProsteBezierCurve extends CustomClipper<Path> {
 
   /// 计算贝塞尔曲线的画点数据
   static BezierCurveDots calcCurveDots(BezierCurveSection param) {
-    double x = (param.top.dx - (param.start.dx * pow((1 - param.proportion), 2) + pow(param.proportion, 2) * param.end.dx)) / (2 * param.proportion * (1 - param.proportion));
-    double y = (param.top.dy - (param.start.dy * pow((1 - param.proportion), 2) + pow(param.proportion, 2) * param.end.dy)) / (2 * param.proportion * (1 - param.proportion));
+    double x = (param.top.dx -
+            (param.start.dx * pow((1 - param.proportion), 2) +
+                pow(param.proportion, 2) * param.end.dx)) /
+        (2 * param.proportion * (1 - param.proportion));
+    double y = (param.top.dy -
+            (param.start.dy * pow((1 - param.proportion), 2) +
+                pow(param.proportion, 2) * param.end.dy)) /
+        (2 * param.proportion * (1 - param.proportion));
 
     return BezierCurveDots(x, y, param.end.dx, param.end.dy);
   }
@@ -61,12 +67,6 @@ class ProsteBezierCurve extends CustomClipper<Path> {
     Path path = Path();
     double firstStartX = list[0].start.dx;
     double firstStartY = list[0].start.dy;
-    double firstEndX = list[0].end.dx;
-    double firstEndY = list[0].end.dy;
-    double lastStartX = list[list.length - 1].start.dx;
-    double lastStartY = list[list.length - 1].start.dy;
-    double lastEndX = list[list.length - 1].end.dx;
-    double lastEndY = list[list.length - 1].end.dy;
 
     if (position == ClipPosition.left) {
       path.lineTo(max(0, firstStartX), 0);
@@ -79,7 +79,9 @@ class ProsteBezierCurve extends CustomClipper<Path> {
       path.lineTo(0, 0);
       path.lineTo(
         0,
-        position == ClipPosition.bottom ? min(size.height, firstStartY) : size.height,
+        position == ClipPosition.bottom
+            ? min(size.height, firstStartY)
+            : size.height,
       );
     }
 
@@ -90,7 +92,9 @@ class ProsteBezierCurve extends CustomClipper<Path> {
       path.lineTo(0, 0);
     } else {
       path.lineTo(
-        position == ClipPosition.right ? min(size.width, firstStartX) : size.width,
+        position == ClipPosition.right
+            ? min(size.width, firstStartX)
+            : size.width,
         size.height,
       );
     }
@@ -100,7 +104,8 @@ class ProsteBezierCurve extends CustomClipper<Path> {
       path.lineTo(size.width, 0);
       path.lineTo(0, 0);
     } else {
-      path.lineTo(size.width, position == ClipPosition.top ? max(0, firstStartY) : 0);
+      path.lineTo(
+          size.width, position == ClipPosition.top ? max(0, firstStartY) : 0);
     }
 
     if (position == ClipPosition.top) {
@@ -134,8 +139,16 @@ class ProsteThirdOrderBezierCurve extends CustomClipper<Path> {
         assert(list.length > 0);
 
   /// 计算三阶贝塞尔曲线的画点数据
-  static ThirdOrderBezierCurveDots calcCurveDots(ThirdOrderBezierCurveSection param) {
-    double x0 = param.p1.dx, y0 = param.p1.dy, x1 = param.p2.dx, y1 = param.p2.dy, x2 = param.p3.dx, y2 = param.p3.dy, x3 = param.p4.dx, y3 = param.p4.dy;
+  static ThirdOrderBezierCurveDots calcCurveDots(
+      ThirdOrderBezierCurveSection param) {
+    double x0 = param.p1.dx,
+        y0 = param.p1.dy,
+        x1 = param.p2.dx,
+        y1 = param.p2.dy,
+        x2 = param.p3.dx,
+        y2 = param.p3.dy,
+        x3 = param.p4.dx,
+        y3 = param.p4.dy;
 
     double xc1 = (x0 + x1) / 2.0;
     double yc1 = (y0 + y1) / 2.0;
@@ -161,7 +174,8 @@ class ProsteThirdOrderBezierCurve extends CustomClipper<Path> {
     double resultX2 = xm2 + (xc2 - xm2) * param.smooth + x2 - xm2;
     double resultY2 = ym2 + (yc2 - ym2) * param.smooth + y2 - ym2;
 
-    return ThirdOrderBezierCurveDots(resultX1, resultY1, resultX2, resultY2, param.p4.dx, param.p4.dy);
+    return ThirdOrderBezierCurveDots(
+        resultX1, resultY1, resultX2, resultY2, param.p4.dx, param.p4.dy);
   }
 
   /// 遍历绘制曲线
@@ -179,12 +193,6 @@ class ProsteThirdOrderBezierCurve extends CustomClipper<Path> {
 
     double firstStartX = list[0].p1.dx;
     double firstStartY = list[0].p1.dy;
-    double firstEndX = list[0].p3.dx;
-    double firstEndY = list[0].p3.dy;
-    double lastStartX = list[list.length - 1].p1.dx;
-    double lastStartY = list[list.length - 1].p1.dy;
-    double lastEndX = list[list.length - 1].p3.dx;
-    double lastEndY = list[list.length - 1].p3.dy;
 
     if (position == ClipPosition.left) {
       path.lineTo(max(0, firstStartX), 0);
@@ -197,7 +205,9 @@ class ProsteThirdOrderBezierCurve extends CustomClipper<Path> {
       path.lineTo(0, 0);
       path.lineTo(
         0,
-        position == ClipPosition.bottom ? min(size.height, firstStartY) : size.height,
+        position == ClipPosition.bottom
+            ? min(size.height, firstStartY)
+            : size.height,
       );
     }
 
@@ -208,7 +218,9 @@ class ProsteThirdOrderBezierCurve extends CustomClipper<Path> {
       path.lineTo(0, 0);
     } else {
       path.lineTo(
-        position == ClipPosition.right ? min(size.width, firstStartX) : size.width,
+        position == ClipPosition.right
+            ? min(size.width, firstStartX)
+            : size.width,
         size.height,
       );
     }
@@ -218,7 +230,8 @@ class ProsteThirdOrderBezierCurve extends CustomClipper<Path> {
       path.lineTo(size.width, 0);
       path.lineTo(0, 0);
     } else {
-      path.lineTo(size.width, position == ClipPosition.top ? max(0, firstStartY) : 0);
+      path.lineTo(
+          size.width, position == ClipPosition.top ? max(0, firstStartY) : 0);
     }
 
     if (position == ClipPosition.top) {
