@@ -15,9 +15,9 @@ class BezierCurveSection {
   double proportion;
 
   BezierCurveSection({
-    @required this.start,
-    @required this.top,
-    @required this.end,
+    required this.start,
+    required this.top,
+    required this.end,
     this.proportion = 1 / 2,
   })  : assert(proportion > 0),
         assert(proportion < 1);
@@ -41,10 +41,10 @@ class ThirdOrderBezierCurveSection {
   double smooth;
 
   ThirdOrderBezierCurveSection({
-    @required this.p1,
-    @required this.p2,
-    @required this.p3,
-    @required this.p4,
+    required this.p1,
+    required this.p2,
+    required this.p3,
+    required this.p4,
     this.smooth = .5,
   })  : assert(smooth >= 0),
         assert(smooth <= 1);

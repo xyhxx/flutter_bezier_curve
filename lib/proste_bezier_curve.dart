@@ -33,11 +33,10 @@ class ProsteBezierCurve extends CustomClipper<Path> {
   ClipPosition position;
 
   ProsteBezierCurve({
-    @required this.list,
+    required this.list,
     this.reclip = true,
     this.position = ClipPosition.left,
-  })  : assert(list != null),
-        assert(list.length > 0);
+  }) : assert(list.length > 0);
 
   /// 计算贝塞尔曲线的画点数据
   static BezierCurveDots calcCurveDots(BezierCurveSection param) {
@@ -132,11 +131,10 @@ class ProsteThirdOrderBezierCurve extends CustomClipper<Path> {
   ClipPosition position;
 
   ProsteThirdOrderBezierCurve({
-    @required this.list,
+    required this.list,
     this.position = ClipPosition.left,
     this.reclip = true,
-  })  : assert(list != null),
-        assert(list.length > 0);
+  }) : assert(list.length > 0);
 
   /// 计算三阶贝塞尔曲线的画点数据
   static ThirdOrderBezierCurveDots calcCurveDots(

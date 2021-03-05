@@ -1,10 +1,10 @@
 name: proste_bezier_curve
 description: Less code, less difficulty, drawing standard Bezier curve.Package can be used to clip the widget or draw the path by yourself.
-version: 1.0.2
+version: 2.0.1
 homepage: https://github.com/xyhxx/flutter_bezier_curve
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
