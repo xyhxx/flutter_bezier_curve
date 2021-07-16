@@ -1,3 +1,6 @@
+<img src="https://raw.githubusercontent.com/xyhxx/program_preview/master/logo/bezier_curve.png" />
+
+
 English | <a href="https://github.com/xyhxx/flutter_bezier_curve/blob/master/doc/cn.md">中文</a>
 
 # Introduction

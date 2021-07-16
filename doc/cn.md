@@ -1,3 +1,6 @@
+<img src="https://raw.githubusercontent.com/xyhxx/program_preview/master/logo/bezier_curve.png" />
+
+
 # 介绍
 
 通过数据计算的方式得到贝塞尔曲线的控制点，再通过 flutter 的绘图功能将点绘制成曲线。
